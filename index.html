@@ -111,47 +111,49 @@
 
     <!-- 📬 Contato -->
     <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Entre em Contato</h2>
-        <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
-            <div class="nome-form">
-                <input type="text" placeholder="Nome" class="campo-formulario" id="nome" required>
-            </div>
-            <div class="grupo-form">
-                <textarea class="texto-form" placeholder="Digite sua mensagem" rows="10" id="mensagem"
-                    required></textarea>
-          <div class="botoes-curriculo">
-  <a href="https://wa.me/?text=Confira%20meu%20currículo%20aqui:%20https://meusite.com/Felipe%20Possa%20Dev%20Fullstack.pdf" target="_blank">
-    <button type="button">📲 Enviar Via WhatsApp</button>
-  </a>
-  <a href="Felipe%20Possa%20Dev%20Fullstack.pdf" download>
-    <button type="button">📄 Curriculum</button>
-  </a>
-</div>
+  <h2 class="contatos-titulo">Entre em Contato</h2>
+  <form class="formulario-contato" id="formulario">
+    <div class="nome-form">
+      <input type="text" placeholder="Nome" class="campo-formulario" id="nome" required>
+    </div>
+    <div class="grupo-form">
+      <textarea class="texto-form" placeholder="Digite sua mensagem" rows="10" id="mensagem" required></textarea>
+    </div>
+
+    <div class="botoes-curriculo">
+      <button type="button" onclick="enviarwhats()"> Enviar Via WhatsApp</button>
+
+      <a href="Felipe%20Possa%20Dev%20Fullstack.pdf" download>
+        <button type="button">📄 Curriculum</button>
+      </a>
+    </div>
+  </form>
+</section>
+
 
 
         </form>
     </section>
 
     <script>
-        function enviarwhats(event) {
-            event.preventDefault();
+  function enviarwhats() {
+    const nome = document.getElementById('nome').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+    const telefone = '5541991662971'; // seu número no formato internacional
 
-            const nome = document.getElementById('nome').value.trim();
-            const mensagem = document.getElementById('mensagem').value.trim();
-            const telefone = '5541991662971';
+    if (!nome || !mensagem) {
+      alert('Por favor, preencha seu nome e a mensagem antes de enviar.');
+      return;
+    }
 
-            if (!nome || !mensagem) {
-                alert('Por favor, preencha todos os campos antes de enviar.');
-                return;
-            }
+    const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
 
-            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
-            const msgFormatada = encodeURIComponent(texto);
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+    window.open(url, '_blank');
+  }
+</script>
 
-            window.open(url, '_blank');
-        }
-    </script>
 
 
 </body>
