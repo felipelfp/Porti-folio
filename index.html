@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Full-stack</title>
+    <meta name="description"
+        content="Portfólio de Felipe Possa, desenvolvedor full-stack apaixonado por tecnologia e eletrônica. Veja meus projetos e entre em contato.">
+    <meta name="keywords"
+        content="Felipe Possa, desenvolvedor, front-end, full-stack, portfólio, projetos, Curitiba, tecnologia, eletrônica, HTML, CSS, JavaScript">
+    <meta name="author" content="Felipe Possa">
+    <link rel="canonical" href="https://seusite.com.br/" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./imgens/logo menor.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<div class="redes-sociais-fixa">
+    <a href="https://www.linkedin.com/in/felipe-possa-876894190/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+    <a href="https://github.com/felipelfp" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com/felipe_possa25/" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram fa-2x"></i>
+    </a>
+</div>
+
+<body>
+
+    <div class="caixa-video">
+        <video src="./imgens/FUndo.mp4" loop muted autoplay></video>
+        <div class="mascara"></div>
+
+        <!-- 🔗 Navegação -->
+        <nav class="navegacao">
+            <ul class="menu">
+                <li><a href="#inicio" class="menu-link">Início</a></li>
+                <li><a href="#sobre" class="menu-link">Sobre</a></li>
+                <li><a href="#projetos" class="menu-link">Projetos</a></li>
+                <li><a href="#contatos" class="menu-link">Contatos</a></li>
+            </ul>
+        </nav>
+
+        <!-- 🏠 Início -->
+        <main id="inicio" class="cabeca">
+            <img src="./imgens/Capa.png" alt="Felipe" class="foto-perfil">
+            <h1 class="meu">Felipe Possa</h1>
+            <h1 class="meu">Desenvolvedor Full-stack</h1>
+        </main>
+
+        <!-- 👨‍💻 Sobre Mim -->
+        <section id="sobre" class="sobre">
+            <h2 class="sobre-titulo">Sobre Mim</h2>
+            <div class="sobre-caixa">
+                <p class="sobre-paragrafo">
+                    Olá! Sou Felipe Lucas de Freitas Possa, estudante de Ciência da Computação na Gran Faculdade, em
+                    Curitiba-Pr.
+                </p>
+
+                <ul class="sobre-lista">
+                    <li><strong>Front-End:</strong> HTML5, CSS, JavaScript</li>
+                    <li><strong>Back-End:</strong> C, C#, Python</li>
+                    <li><strong>Ferramentas:</strong> Git, GitHub</li>
+                    <li><strong>Frameworks:</strong> React, Angular, Svelte, .NET, Node.js</li>
+                    <li><strong>Hardware:</strong> Construção de robôs com Arduino Uno e Ponte H</li>
+                    <li><strong>Outros conhecimentos:</strong> Manutenção de hardware e software</li>
+                </ul>
+            </div>
+        </section>
+
+
+    </div>
+
+    </section>
+
+    <!-- 🧪 Projetos -->
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./imgens/site.png" alt="Diamond" class="img">
+                <div class="novo">
+                    <h3 class="info-projetos">Diamond</h3>
+                    <p class="paragrafo-projeto">Academia de luta e fitness</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./imgens/Site2.png" alt="Ironclash" class="img">
+                <div class="novo">
+                    <h3 class="info-projetos">Ironclash</h3>
+                    <p class="paragrafo-projeto">Site de torneio de robôs</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./imgens/ROBO W.png" alt="Robot" class="img">
+                <div class="novo">
+                    <h3 class="info-projetos">Robot</h3>
+                    <p class="paragrafo-projeto">Construção de robôs com Arduino Uno e Ponte H</p>
+                    <p class="paragrafo-projeto">Programado com C</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 📬 Contato -->
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
+            <div class="nome-form">
+                <input type="text" placeholder="Nome" class="campo-formulario" id="nome" required>
+            </div>
+            <div class="grupo-form">
+                <textarea class="texto-form" placeholder="Digite sua mensagem" rows="10" id="mensagem"
+                    required></textarea>
+          <div class="botoes-curriculo">
+  <a href="https://wa.me/?text=Confira%20meu%20currículo%20aqui:%20https://meusite.com/Felipe%20Possa%20Dev%20Fullstack.pdf" target="_blank">
+    <button type="button">📲 Enviar Via WhatsApp</button>
+  </a>
+  <a href="Felipe%20Possa%20Dev%20Fullstack.pdf" download>
+    <button type="button">📄 Curriculum</button>
+  </a>
+</div>
+
+
+        </form>
+    </section>
+
+    <script>
+        function enviarwhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+            const telefone = '5541991662971';
+
+            if (!nome || !mensagem) {
+                alert('Por favor, preencha todos os campos antes de enviar.');
+                return;
+            }
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+
+
+</body>
+
+</html>
